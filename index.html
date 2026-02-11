@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dialogi - The Soul of Guria in Every Bottle</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'dialogi-black': '#121212',
+                        'dialogi-coldblack': '#1A1A1A',
+                        'dialogi-red': '#D42111',
+                        'dialogi-gray': '#4B5563',
+                        'dialogi-cream': '#F5F5F0',
+                    },
+                    fontFamily: {
+                        'display': ['"Plus Jakarta Sans"', 'sans-serif'],
+                        'body': ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #121212;
+            color: #F5F5F0;
+        }
+
+        .hero-bg {
+            background: linear-gradient(180deg, rgba(18, 18, 18, 0.4) 0%, rgba(18, 18, 18, 0.8) 100%);
+        }
+
+        .scroll-fade {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(212, 33, 17, 0.2);
+        }
+
+        .btn-primary {
+            background-color: #D42111;
+            color: #F5F5F0;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #B01A0E;
+            transform: scale(1.05);
+        }
+
+        .btn-secondary {
+            border: 2px solid #F5F5F0;
+            color: #F5F5F0;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background-color: #F5F5F0;
+            color: #121212;
+        }
+
+        .varietal-card {
+            background: linear-gradient(135deg, rgba(75, 85, 99, 0.1) 0%, rgba(18, 18, 18, 0.8) 100%);
+            border: 1px solid rgba(245, 245, 240, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .varietal-card:hover {
+            border-color: #D42111;
+            background: linear-gradient(135deg, rgba(212, 33, 17, 0.1) 0%, rgba(18, 18, 18, 0.9) 100%);
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-dialogi-black/90 backdrop-blur-md border-b border-dialogi-cream/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 sm:h-20">
+                <div class="flex items-center space-x-2">
+                    <div class="w-2 h-2 bg-dialogi-red rotate-45"></div>
+                    <span
+                        class="text-xl sm:text-2xl font-display font-bold text-dialogi-cream tracking-wider">DIALOGI</span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#heritage"
+                        class="text-dialogi-cream hover:text-dialogi-red transition uppercase text-sm tracking-wide">Heritage</a>
+                    <a href="#catalog"
+                        class="text-dialogi-cream hover:text-dialogi-red transition uppercase text-sm tracking-wide">Catalog</a>
+                    <a href="#tasting"
+                        class="text-dialogi-cream hover:text-dialogi-red transition uppercase text-sm tracking-wide">Tasting
+                        Spaces</a>
+                    <a href="#contact"
+                        class="text-dialogi-cream hover:text-dialogi-red transition uppercase text-sm tracking-wide">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-dialogi-cream focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen min-h-[600px] overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=1920&q=80" alt="Georgian Vineyard"
+                class="w-full h-full object-cover">
+            <div class="absolute inset-0 hero-bg"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 h-full flex items-center justify-center">
+            <div class="text-center px-4 max-w-5xl mx-auto">
+                <p class="text-dialogi-red text-sm sm:text-base uppercase tracking-widest mb-4 font-semibold">PREMIUM
+                    WINERY & TASTING ROOM</p>
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold mb-6 leading-tight">
+                    Taste the Mistery of Guria<br>
+                    <span class="text-dialogi-cream">in Every Drop</span>
+                </h1>
+                <p class="text-dialogi-cream/80 text-base sm:text-lg md:text-xl mb-10 max-w-2xl mx-auto font-light">
+                    More than a wine, an immersion. Join us for a private tasting journey <br class="hidden sm:inline">
+                    through Georgia’s most unique micro-zones. From Chkhaveri to <br class="hidden sm:inline">
+                    Sakmela, explore the flavors of a forgotten history.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+                    <button
+                        class="btn-primary px-8 sm:px-10 py-3 sm:py-4 rounded-md uppercase text-xs sm:text-sm font-semibold tracking-wider w-full sm:w-auto">
+                        BOOK A TASTING
+                    </button>
+                    <button
+                        class="btn-secondary px-8 sm:px-10 py-3 sm:py-4 rounded-md uppercase text-xs sm:text-sm font-semibold tracking-wider w-full sm:w-auto">
+                        VIEW WINE LIST
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hidden sm:block">
+            <svg class="w-6 h-6 text-dialogi-cream/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3">
+                </path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Heritage Section -->
+    <section id="heritage" class="py-16 sm:py-20 lg:py-32 bg-dialogi-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+                <!-- Text Content -->
+                <div class="order-2 lg:order-1">
+                    <div class="border-l-4 border-dialogi-red pl-6 sm:pl-8 mb-8">
+                        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-dialogi-cream mb-4">
+                            Reviving the<br>
+                            <span class="text-dialogi-red">Forgotten Vines of Guria</span>
+                        </h2>
+                    </div>
+
+                    <p class="text-dialogi-cream/80 text-base sm:text-lg leading-relaxed mb-8">
+                        Located in the verdant heart of Guria, our vineyards are a sanctuary for Georgia's most elusive
+                        grapes. From the delicate rose notes of Chkhaveri to the deep character of Jani, our collection
+                        represents the pinnacle of biodiversity.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 mb-10">
+                        <div>
+                            <h3 class="text-dialogi-red text-lg sm:text-xl font-display font-semibold mb-2">Ancient
+                                Methodology</h3>
+                            <p class="text-dialogi-cream/70 text-sm sm:text-base">Wines aged in traditional Qvevri to
+                                express the pure, unadulterated soul of their origin.</p>
+                        </div>
+                        <div>
+                            <h3 class="text-dialogi-red text-lg sm:text-xl font-display font-semibold mb-2">Rare
+                                Biodiversity</h3>
+                            <p class="text-dialogi-cream/70 text-sm sm:text-base">A sanctuary where the subtropical
+                                climate nurtures endemic varieties found nowhere else.</p>
+                        </div>
+                    </div>
+
+                    <a href="#"
+                        class="inline-flex items-center text-dialogi-red font-semibold hover:text-dialogi-cream transition group">
+                        <span class="uppercase text-sm tracking-wide">Read Our Full Story</span>
+                        <svg class="w-5 h-5 ml-2 group-hover:translate-x-2 transition-transform" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Image Grid -->
+                <div class="order-1 lg:order-2 grid grid-cols-2 gap-4">
+                    <div class="space-y-4">
+                        <img src="https://images.unsplash.com/photo-1733551134783-59f8b65d1284?q=80&w=435&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="Clay Qvevri" class="w-full h-64 sm:h-80 object-cover rounded-xl shadow-2xl">
+                    </div>
+                    <div class="space-y-4 mt-8 sm:mt-12">
+                        <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=500&q=80"
+                            alt="Wine Glass" class="w-full h-64 sm:h-80 object-cover rounded-xl shadow-2xl">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Varietals Section -->
+    <section id="catalog" class="py-16 sm:py-20 lg:py-32 bg-dialogi-coldblack">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12 sm:mb-16">
+                <p class="text-dialogi-red text-xs sm:text-sm uppercase tracking-widest mb-3">The Selection</p>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-dialogi-cream">Our Indigenous
+                    Collection</h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+                <!-- Left Side - Featured Varietal Khkhaveri -->
+                <div class="relative overflow-hidden rounded-xl group hover-lift h-[500px] lg:h-[600px]">
+                    <img src="https://images.unsplash.com/photo-1504279577054-acfeccf8fc52?w=800&q=80"
+                        alt="Khkhaveri Wine" class="w-full h-full object-cover">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-dialogi-black via-dialogi-black/70 to-dialogi-black/40">
+                    </div>
+                    <div class="absolute inset-0 p-6 sm:p-8 lg:p-12 flex flex-col justify-end">
+                        <div class="flex items-baseline mb-4">
+                            <span
+                                class="text-dialogi-red text-5xl sm:text-6xl lg:text-7xl font-display font-bold">C</span>
+                            <h3 class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-dialogi-cream">
+                                hkhaveri</h3>
+                        </div>
+                        <p class="text-dialogi-cream/90 mb-6 text-sm sm:text-base lg:text-lg max-w-lg leading-relaxed">
+                            The legendary rose of Guria. Born in the mist-shrouded highlands, this rare indigenous
+                            variety offers a complex profile of wild berries, white peach, and spring flowers. A
+                            delicate balance of vibrant acidity and soft tannins, capturing the true essence of Western
+                            Georgia.
+                        </p>
+                        <button
+                            class="btn-primary px-6 sm:px-8 py-3 rounded-md uppercase text-xs font-semibold tracking-wider w-fit">
+                            See More
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Side - Three Varietals -->
+                <div class="space-y-6">
+                    <!-- Tsolikauri -->
+                    <div class="varietal-card rounded-xl p-6 flex items-center space-x-6 hover-lift bg-dialogi-gray">
+                        <img src="https://images.unsplash.com/photo-1647773254170-1369cef936a1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="Solikuuri" class="w-24 h-24 sm:w-28 sm:h-28 object-cover rounded-xl flex-shrink-0">
+                        <div class="flex-1">
+                            <h4 class="text-2xl sm:text-3xl font-display font-bold text-dialogi-cream mb-3">
+                                <span class="text-dialogi-red">T</span>solikauri
+                            </h4>
+                            <p class="text-dialogi-cream/70 text-sm sm:text-base mb-4 leading-relaxed">
+                                The golden icon of the West. A full-bodied white with vibrant citrus notes and a long,
+                                mineral finish.
+                            </p>
+                            <a href="#"
+                                class="text-dialogi-red text-sm font-semibold uppercase tracking-wide hover:text-dialogi-cream transition inline-flex items-center">
+                                Details
+                                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Budeshuri - Offset to the right -->
+                    <div
+                        class="varietal-card rounded-xl p-6 flex items-center space-x-6 hover-lift lg:ml-12 bg-dialogi-gray">
+                        <img src="https://images.unsplash.com/photo-1547595628-c61a29f496f0?w=400&q=80" alt="Udeshuri"
+                            class="w-24 h-24 sm:w-28 sm:h-28 object-cover rounded-xl flex-shrink-0">
+                        <div class="flex-1">
+                            <h4 class="text-2xl sm:text-3xl font-display font-bold text-dialogi-cream mb-3">
+                                <span class="text-dialogi-red">B</span>udeshuri
+                            </h4>
+                            <p class="text-dialogi-cream/70 text-sm sm:text-base mb-4 leading-relaxed">
+                                A rare aromatic gem. Known for its floral bouquet, velvety texture, and subtle hints of
+                                honey.
+                            </p>
+                            <a href="#"
+                                class="text-dialogi-red text-sm font-semibold uppercase tracking-wide hover:text-dialogi-cream transition inline-flex items-center">
+                                Details
+                                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Saperavi -->
+                    <div class="varietal-card rounded-xl p-6 flex items-center space-x-6 hover-lift bg-dialogi-gray">
+                        <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=400&q=80"
+                            alt="Saperavi" class="w-24 h-24 sm:w-28 sm:h-28 object-cover rounded-xl flex-shrink-0">
+                        <div class="flex-1">
+                            <h4 class="text-2xl sm:text-3xl font-display font-bold text-dialogi-cream mb-3">
+                                <span class="text-dialogi-red">S</span>aperavi
+                            </h4>
+                            <p class="text-dialogi-cream/70 text-sm sm:text-base mb-4 leading-relaxed">
+                                Georgia’s signature red. Deeply colored and robust, with intense aromas of black cherry
+                                and spices.
+                            </p>
+                            <a href="#"
+                                class="text-dialogi-red text-sm font-semibold uppercase tracking-wide hover:text-dialogi-cream transition inline-flex items-center">
+                                Details
+                                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tasting Spaces Section -->
+    <section id="tasting" class="py-16 sm:py-20 lg:py-32 bg-dialogi-black/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-12 sm:mb-16 gap-4">
+                <div>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-dialogi-cream mb-3">Tasting
+                        Spaces</h2>
+                    <p class="text-dialogi-cream/70 text-sm sm:text-base max-w-2xl">
+                        From the ancient soil of Guria to the vibrant heart of Tbilisi. Experience the Dialogi
+                        collection in three distinct atmospheres designed to elevate every note.
+                    </p>
+                </div>
+                <a href="#"
+                    class="text-dialogi-red text-sm font-semibold uppercase tracking-wide hover:text-dialogi-cream transition whitespace-nowrap">
+                    View All Locations →
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                <!-- Guria Estate -->
+                <div class="group hover-lift rounded-xl overflow-hidden bg-dialogi-black border border-dialogi-cream/10"
+                    style="width: 405px; max-width: 100%;">
+                    <div class="relative overflow-hidden" style="height: 540px;">
+                        <img src="https://images.unsplash.com/photo-1587920398498-035cde4c29a4?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="Guria Estate"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-dialogi-black/80 via-dialogi-black/20 to-transparent">
+                        </div>
+
+                        <!-- Content positioned at bottom left -->
+                        <div class="absolute bottom-6 left-6">
+                            <p class="text-dialogi-red text-xs uppercase tracking-widest mb-2 font-semibold">The source
+                            </p>
+                            <h3 class="text-3xl font-display font-bold text-dialogi-cream mb-4">Guria Estate</h3>
+                            <button
+                                class="bg-white text-dialogi-black uppercase text-xs font-semibold tracking-wider hover:bg-dialogi-cream transition rounded-md"
+                                style="width: 123px; height: 32px;">
+                                Book Visit
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hotel Khedi -->
+                <div class="group hover-lift rounded-xl overflow-hidden bg-dialogi-black border border-dialogi-cream/10"
+                    style="width: 405px; max-width: 100%;">
+                    <div class="relative overflow-hidden" style="height: 540px;">
+                        <img src="https://images.unsplash.com/photo-1761416671230-54f887bcac10?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="Hotel Khedi"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-dialogi-black/80 via-dialogi-black/20 to-transparent">
+                        </div>
+
+                        <!-- Content positioned at bottom left -->
+                        <div class="absolute bottom-6 left-6">
+                            <p class="text-dialogi-red text-xs uppercase tracking-widest mb-2 font-semibold">Panoramic
+                                Views
+                            </p>
+                            <h3 class="text-3xl font-display font-bold text-dialogi-cream mb-4">Hotel Khedi</h3>
+                            <button
+                                class="bg-white text-dialogi-black uppercase text-xs font-semibold tracking-wider hover:bg-dialogi-cream transition rounded-md"
+                                style="width: 123px; height: 32px;">
+                                Reserve Table
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vera Boutique -->
+                <div class="group hover-lift rounded-xl overflow-hidden bg-dialogi-black border border-dialogi-cream/10"
+                    style="width: 405px; max-width: 100%;">
+                    <div class="relative overflow-hidden" style="height: 540px;">
+                        <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?w=600&q=80"
+                            alt="Vera Boutique"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-dialogi-black/80 via-dialogi-black/20 to-transparent">
+                        </div>
+
+                        <!-- Content positioned at bottom left -->
+                        <div class="absolute bottom-6 left-6">
+                            <p class="text-dialogi-red text-xs uppercase tracking-widest mb-2 font-semibold">Urban
+                                Sophistication
+                            </p>
+                            <h3 class="text-3xl font-display font-bold text-dialogi-cream mb-4">Vera Boutique</h3>
+                            <button
+                                class="bg-white text-dialogi-black uppercase text-xs font-semibold tracking-wider hover:bg-dialogi-cream transition rounded-md"
+                                style="width: 123px; height: 32px;">
+                                Private Event
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dialogi-black border-t border-dialogi-cream/10 py-12 sm:py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12">
+                <!-- Logo & Description -->
+                <div class="sm:col-span-2 lg:col-span-1">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-2 h-2 bg-dialogi-red rotate-45"></div>
+                        <span class="text-xl font-display font-bold text-dialogi-cream tracking-wider">DIALOGI</span>
+                    </div>
+                    <p class="text-dialogi-cream/60 text-sm mb-6">
+                        Preserving the soul of Guria through
+                        artisanal winemaking and cultural dialogue.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 bg-dialogi-cream/10 hover:bg-dialogi-red rounded-full flex items-center justify-center transition">
+                            <svg class="w-5 h-5 text-dialogi-cream" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-dialogi-cream/10 hover:bg-dialogi-red rounded-full flex items-center justify-center transition">
+                            <svg class="w-5 h-5 text-dialogi-cream" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Company -->
+                <div>
+                    <h4 class="text-dialogi-cream font-semibold mb-4 uppercase text-sm tracking-wide">Company</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-dialogi-cream/70 hover:text-dialogi-red transition text-sm">Our
+                                Heritage</a></li>
+                        <li><a href="#" class="text-dialogi-cream/70 hover:text-dialogi-red transition text-sm">Our
+                                Vineyards</a></li>
+                    </ul>
+                </div>
+
+                <!-- Experience -->
+                <div>
+                    <h4 class="text-dialogi-cream font-semibold mb-4 uppercase text-sm tracking-wide">Experience</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-dialogi-cream/70 hover:text-dialogi-red transition text-sm">Wine
+                                Catalog</a></li>
+                        <li><a href="#" class="text-dialogi-cream/70 hover:text-dialogi-red transition text-sm">Tasting
+                                Spaces</a></li>
+                        <li><a href="#"
+                                class="text-dialogi-cream/70 hover:text-dialogi-red transition text-sm">Events</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="text-dialogi-cream font-semibold mb-4 uppercase text-sm tracking-wide">Newsletter</h4>
+                    <p class="text-dialogi-cream/70 text-md mb-4">
+                        Join the dialogue for exclusive vintage
+                        releases.
+                    </p>
+                    <div class="flex flex-col space-y-3">
+                        <input type="email" placeholder="email@example.com"
+                            class="bg-dialogi-cream/10 border border-dialogi-cream/20 rounded-md px-4 py-2 text-dialogi-cream text-sm focus:outline-none focus:border-dialogi-red transition">
+                        <button class="btn-primary px-6 py-2 rounded-md uppercase text-xs font-semibold tracking-wider">
+                            Subscribe
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div
+                class="border-t border-dialogi-cream/10 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p class="text-dialogi-cream/50 text-xs sm:text-sm text-center sm:text-left">
+                    © 2025 Dialogi. All rights reserved.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#"
+                        class="text-dialogi-cream/50 hover:text-dialogi-red transition text-xs sm:text-sm">Privacy
+                        Policy</a>
+                    <a href="#" class="text-dialogi-cream/50 hover:text-dialogi-red transition text-xs sm:text-sm">Terms
+                        of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(section);
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.md\\:hidden button');
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                alert('Mobile menu functionality would be implemented here');
+            });
+        }
+    </script>
+
+</body>
+
+</html>
