@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasting Spaces - Dialogi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'dialogi-black': '#121212',
+                        'dialogi-red': '#D42111',
+                        'dialogi-gray': '#4B5563',
+                        'dialogi-cream': '#F5F5F0',
+                    },
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'body': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #121212;
+            color: #F5F5F0;
+        }
+
+        .hero-overlay {
+            background: linear-gradient(180deg, rgba(18, 18, 18, 0.3) 0%, rgba(18, 18, 18, 0.7) 100%);
+        }
+
+        .hover-lift {
+            transition: transform 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-8px);
+        }
+
+        /* --- Styles des boutons importés de index.html --- */
+        .btn-primary {
+            background-color: #D42111;
+            color: #F5F5F0;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #B01A0E;
+            transform: scale(1.05);
+        }
+
+        .btn-secondary {
+            border: 2px solid #F5F5F0;
+            color: #F5F5F0;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background-color: #F5F5F0;
+            color: #121212;
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-dialogi-black/90 backdrop-blur-md border-b border-dialogi-cream/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 sm:h-20">
+                <div class="flex items-center space-x-2">
+                    <a href="index.html" class="flex items-center">
+                        <img src="img/logo.png" alt="Digitize Georgia Logo" class="h-16 md:h-24 w-auto object-contain">
+                    </a>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#heritage"
+                        class="text-dialogi-cream hover:text-dialogi-red transition uppercase text-sm tracking-wide">Heritage</a>
+                    <a href="#catalog"
+                        class="text-dialogi-cream hover:text-dialogi-red transition uppercase text-sm tracking-wide">Catalog</a>
+                    <a href="#tasting"
+                        class="text-dialogi-cream hover:text-dialogi-red transition uppercase text-sm tracking-wide">Tasting
+                        Spaces</a>
+                    <a href="#contact"
+                        class="text-dialogi-cream hover:text-dialogi-red transition uppercase text-sm tracking-wide">Contact</a>
+                </div>
+
+                <button id="mobile-menu-button" class="md:hidden p-2 text-dialogi-cream focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <div id="mobile-menu" class="hidden md:hidden pb-6 pt-2 border-t border-dialogi-cream/10">
+                <div class="flex flex-col space-y-4">
+                    <a href="#heritage"
+                        class="text-base uppercase tracking-wide text-dialogi-cream hover:text-dialogi-red transition-colors block px-2">Heritage</a>
+                    <a href="#catalog"
+                        class="text-base uppercase tracking-wide text-dialogi-cream hover:text-dialogi-red transition-colors block px-2">Catalog</a>
+                    <a href="#tasting"
+                        class="text-base uppercase tracking-wide text-dialogi-cream hover:text-dialogi-red transition-colors block px-2">Tasting
+                        Spaces</a>
+                    <a href="#contact"
+                        class="text-base uppercase tracking-wide text-dialogi-cream hover:text-dialogi-red transition-colors block px-2">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative h-[60vh] min-h-[500px] overflow-hidden mt-16 sm:mt-20">
+        <div class="absolute inset-0">
+            <img src="img/5.jpg" alt="Wine Tasting Experience" class="w-full h-full object-cover">
+            <div class="absolute inset-0 hero-overlay"></div>
+        </div>
+
+        <div class="relative z-10 h-full flex items-center justify-center">
+            <div class="text-center px-4 max-w-4xl mx-auto">
+                <p class="text-dialogi-red text-sm sm:text-base uppercase tracking-widest mb-4 font-semibold">Dialogi
+                    Events & Tastings</p>
+                <h1
+                    class="text-4xl sm:text-5xl md:text-6xl font-display font-bold mb-6 leading-tight text-dialogi-cream">
+                    Immersive wine experiences that honor<br class="hidden sm:inline"> 8,000 years of Georgian
+                    tradition.
+                </h1>
+                <button
+                    class="btn-primary px-8 sm:px-10 py-3 sm:py-4 rounded-md uppercase text-xs sm:text-sm font-semibold tracking-wider w-full sm:w-auto">
+                    Book Experience
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 sm:py-20 lg:py-32 bg-dialogi-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12">
+                <h2 class="text-3xl sm:text-4xl font-display font-bold text-dialogi-cream mb-3">Upcoming Events</h2>
+                <p class="text-dialogi-red text-base sm:text-lg">Experience the essence of Georgian viticulture</p>
+            </div>
+
+            <div class="flex justify-end mb-8">
+                <a href="#"
+                    class="text-dialogi-red text-sm font-semibold uppercase tracking-wide hover:text-dialogi-cream transition">
+                    View all events →
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                <div class="group hover-lift rounded-xl overflow-hidden bg-[#1A1A1A] border border-[#D42111]/20 relative">
+                    <div class="absolute top-4 left-4 z-10 bg-dialogi-red text-dialogi-cream px-4 py-1 rounded-full text-xs font-semibold uppercase tracking-wide">
+                        Selling Fast
+                    </div>
+
+                    <div class="relative h-64 sm:h-80 overflow-hidden">
+                        <img src="img/cellar.jpg" alt="Guria Vineyard Experience"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+
+                    <div class="p-6">
+                        <h3 class="text-2xl font-display font-bold text-dialogi-cream mb-2">Guria Vineyard Experience</h3>
+                        <p class="text-dialogi-cream/70 text-sm mb-4">Outdoor tasting & lunch</p>
+
+                        <div class="flex items-center text-dialogi-cream/60 text-sm mb-6">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            Sep 24, 2023
+                        </div>
+
+                        <button class="btn-primary w-full py-3 rounded-md uppercase text-xs font-semibold tracking-wider">
+                            Register on Facebook
+                        </button>
+                    </div>
+                </div>
+
+                <div class="group hover-lift rounded-xl overflow-hidden bg-[#1A1A1A] border border-[#D42111]/20 relative">
+                    <div class="relative h-64 sm:h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=600&q=80"
+                            alt="Hotel Khedi Rooftop Tasting"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+
+                    <div class="p-6">
+                        <h3 class="text-2xl font-display font-bold text-dialogi-cream mb-2">Hotel Khedi Rooftop Tasting</h3>
+                        <p class="text-dialogi-cream/70 text-sm mb-4">Premium city views</p>
+
+                        <div class="flex items-center text-dialogi-cream/60 text-sm mb-6">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            Oct 05, 2023
+                        </div>
+
+                        <button class="btn-primary w-full py-3 rounded-md uppercase text-xs font-semibold tracking-wider">
+                            Register on Facebook
+                        </button>
+                    </div>
+                </div>
+
+                <div class="group hover-lift rounded-xl overflow-hidden bg-[#1A1A1A] border border-[#D42111]/20 relative">
+                    <div class="relative h-64 sm:h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?w=600&q=80"
+                            alt="Vera Boutique Wine Night"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+
+                    <div class="p-6">
+                        <h3 class="text-2xl font-display font-bold text-dialogi-cream mb-2">Vera Boutique Wine Night</h3>
+                        <p class="text-dialogi-cream/70 text-sm mb-4">Exclusive evening selection</p>
+
+                        <div class="flex items-center text-dialogi-cream/60 text-sm mb-6">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            Oct 12, 2023
+                        </div>
+
+                        <button class="btn-primary w-full py-3 rounded-md uppercase text-xs font-semibold tracking-wider">
+                            Register on Facebook
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dialogi-black border-t border-dialogi-cream/10 py-12 sm:py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12">
+                <div class="sm:col-span-2 lg:col-span-1">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-2 h-2 bg-dialogi-red rotate-45"></div>
+                        <span class="text-xl font-display font-bold text-dialogi-cream tracking-wider">DIALOGI</span>
+                    </div>
+                    <p class="text-dialogi-cream/60 text-sm mb-6">
+                        Preserving the soul of Guria through
+                        artisanal winemaking and cultural dialogue.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/Dialogi.Georgian.Wine/" target="_blank"
+                            class="w-10 h-10 bg-dialogi-cream/10 hover:bg-dialogi-red rounded-full flex items-center justify-center transition">
+                            <svg class="w-5 h-5 text-dialogi-cream" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/dialogi_georgian_wine/" target="_blank"
+                            class="w-10 h-10 bg-dialogi-cream/10 hover:bg-dialogi-red rounded-full flex items-center justify-center transition">
+                            <svg class="w-5 h-5 text-dialogi-cream" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-dialogi-cream font-semibold mb-4 uppercase text-sm tracking-wide">Company</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#heritage"
+                                class="text-dialogi-cream/70 hover:text-dialogi-red transition text-sm">Our
+                                Heritage</a></li>
+                        <li><a href="#contact"
+                                class="text-dialogi-cream/70 hover:text-dialogi-red transition text-sm">Our
+                                Vineyards</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-dialogi-cream font-semibold mb-4 uppercase text-sm tracking-wide">Experience</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#catalog"
+                                class="text-dialogi-cream/70 hover:text-dialogi-red transition text-sm">Wine
+                                Catalog</a></li>
+                        <li><a href="#tasting"
+                                class="text-dialogi-cream/70 hover:text-dialogi-red transition text-sm">Tasting
+                                Spaces</a></li>
+                </div>
+
+                <div>
+                    <h4 class="text-dialogi-cream font-semibold mb-4 uppercase text-sm tracking-wide">Newsletter</h4>
+                    <p class="text-dialogi-cream/70 text-md mb-4">
+                        Join the dialogue for exclusive vintage
+                        releases.
+                    </p>
+                    <div class="flex flex-col space-y-3">
+                        <input type="email" placeholder="email@example.com"
+                            class="bg-dialogi-cream/10 border border-dialogi-cream/20 rounded-md px-4 py-2 text-dialogi-cream text-sm focus:outline-none focus:border-dialogi-red transition">
+                        <button class="btn-primary px-6 py-2 rounded-md uppercase text-xs font-semibold tracking-wider">
+                            Subscribe
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-dialogi-cream/10 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p class="text-dialogi-cream/50 text-xs sm:text-sm text-center sm:text-left">
+                    © 2025 Dialogi. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
